@@ -9,3 +9,13 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+module MiniTest::Expectations
+  infect_an_assertion :assert_redirected_to, :must_redirect_to
+  infect_an_assertion :assert_template, :must_render_template
+  infect_an_assertion :assert_response, :must_respond_with
+end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+end

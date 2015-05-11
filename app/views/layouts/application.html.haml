@@ -8,4 +8,8 @@
     = csrf_meta_tags
   %body
     .container
-      = yield
+      %section.devise
+        %p.notice= notice
+        %p.alert= alert
+      %section.main
+        = yield

@@ -1,0 +1,11 @@
+= simple_form_for @account, url: account_path do |f|
+  = f.input :name
+  = f.input :subdomain
+  = f.fields_for :owner do |fo|
+    = fo.input :email
+    = fo.input :first_name
+    = fo.input :last_name
+    = fo.input :password
+    = fo.input :password_confirmation
+
+  = f.button :submit, class: 'btn btn-default'
